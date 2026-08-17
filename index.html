@@ -3,30 +3,40 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+    
+    <!-- 🔥 DESHABILITAR CACHÉ COMPLETAMENTE 🔥 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0, proxy-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="ETag" content="0">
+    <meta http-equiv="Surrogate-Control" content="no-store">
+    
     <title>Triple M | Categorías · Catálogo</title>
     <link rel="icon" type="image/webp" href="img/logo.webp"/>
+    
+    <!-- 🔥 CARGAR TODO CON TIMESTAMP PARA EVITAR CACHÉ 🔥 -->
+    <script>
+        // Forzar que todos los recursos se carguen con timestamp
+        (function() {
+            const ts = Date.now();
+            
+            // Reescribir links de CSS si los hubiera
+            document.addEventListener('DOMContentLoaded', function() {
+                // Agregar timestamp a todas las imágenes
+                document.querySelectorAll('img[src]').forEach(img => {
+                    if (!img.src.includes('data:')) {
+                        const separator = img.src.includes('?') ? '&' : '?';
+                        img.src = img.src.split('?')[0] + separator + 't=' + ts;
+                    }
+                });
+            });
+        })();
+    </script>
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
-    <!-- 🔥 FORZAR RECARGA SI LA URL NO TIENE PARÁMETRO -->
-    <script>
-        (function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            // Si no tiene parámetro de versión, agregarlo
-            if (!urlParams.has('v') && !urlParams.has('_') && !urlParams.has('nocache')) {
-                const timestamp = Date.now();
-                const newUrl = window.location.origin + window.location.pathname + '?_=' + timestamp + '&v=' + timestamp;
-                window.location.replace(newUrl);
-                return; // Detener ejecución
-            }
-        })();
-    </script>
     
     <script>
         tailwind.config = {
@@ -260,7 +270,7 @@
             <a class="font-['Manrope'] uppercase tracking-widest text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] transition-colors duration-300" href="html/carrito.html">Carrito</a>
         </div>
         <div class="flex items-center gap-4">
-            <button id="refreshCacheBtn" class="refresh-btn p-2 rounded-full transition-all duration-300" title="Borrar caché y recargar">
+            <button id="refreshCacheBtn" class="refresh-btn p-2 rounded-full transition-all duration-300" title="Recargar página sin caché">
                 <span class="material-symbols-outlined text-[#F2CA50]">refresh</span>
             </button>
             <a href="html/carrito.html" class="relative">
@@ -274,7 +284,7 @@
         <section class="mb-10">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div class="max-w-2xl">
-                    <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-4" id="mainTitle">prueba</h1>
+                    <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-4" id="mainTitle">CATEGORIAS</h1>
                     <p class="text-on-surface-variant body-lg max-w-lg leading-relaxed" id="subtitle">Explora nuestras categorías</p>
                 </div>
                 <div class="w-full md:w-96 relative group">
@@ -295,7 +305,7 @@
             <div id="refreshMessage" class="mt-4 hidden">
                 <div class="bg-primary/10 border border-primary/30 rounded-lg px-4 py-2 text-sm text-primary flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm spinner">sync</span>
-                    <span>Actualizando catálogo...</span>
+                    <span>Recargando sin caché...</span>
                 </div>
             </div>
             
@@ -428,7 +438,7 @@
             
             const familiasHTML = familiasAMostrar.map(familia => {
                 const cantidadProductos = todosLosProductos.filter(p => p.familia === familia).length;
-                const imagenPath = `img/${familia}.webp`;
+                const imagenPath = `img/${familia}.webp?t=${Date.now()}`;
                 
                 return `
                     <article class="family-card group bg-surface-container-low rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20" data-familia="${familia}">
@@ -459,7 +469,7 @@
             });
         }
 
-        // --- Renderizado de PRODUCTOS (resultados de búsqueda o categoría) ---
+        // --- Renderizado de PRODUCTOS ---
         function renderProductos(productos, titulo = null, mostrarBotonVolver = false) {
             if (!productos || productos.length === 0) {
                 productsGrid.innerHTML = `<p class="text-center col-span-3 text-on-surface-variant">No se encontraron productos que coincidan con la búsqueda</p>`;
@@ -468,20 +478,19 @@
                 return;
             }
             
-            // Inicializar cantidades
             productos.forEach(p => {
                 if (!window.cantidadesProductos) window.cantidadesProductos = {};
                 if (!window.cantidadesProductos[p.id]) window.cantidadesProductos[p.id] = 1;
             });
             
-            // Mostrar contador de resultados
             searchResultsCount.textContent = `${productos.length} ${productos.length === 1 ? 'resultado' : 'resultados'}`;
             searchResultsCount.classList.remove('hidden');
             
+            const timestamp = Date.now();
             const productosHTML = productos.map(p => `
                 <article class="product-card group" data-id="${p.id}">
                     <div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden p-4 mb-6 rounded-lg flex items-center justify-center">
-                        <img alt="${p.nombre}" class="product-image w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="${p.imagen}" onerror="this.src='https://placehold.co/600x800?text=Triple+M'"/>
+                        <img alt="${p.nombre}" class="product-image w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="${p.imagen}?t=${timestamp}" onerror="this.src='https://placehold.co/600x800?text=Triple+M'"/>
                     </div>
                     <div class="quantity-selector">
                         <button class="quantity-btn" onclick="cambiarCantidad(${p.id}, -1)">−</button>
@@ -499,7 +508,6 @@
             
             productsGrid.innerHTML = productosHTML;
             
-            // Mostrar/Ocultar botón volver
             if (mostrarBotonVolver) {
                 backButtonContainer.classList.remove('hidden');
             } else {
@@ -511,26 +519,18 @@
         function actualizarVistaSegunEstado() {
             const busqueda = searchInput.value.trim().toLowerCase();
             
-            // Si hay búsqueda activa
             if (busqueda !== '') {
                 busquedaActiva = true;
-                
-                // Filtrar productos por nombre
                 const productosFiltrados = todosLosProductos.filter(p => 
                     p.nombre.toLowerCase().includes(busqueda)
                 );
-                
                 mainTitle.textContent = `Resultados para "${busqueda}"`;
                 subtitle.textContent = `Encontramos ${productosFiltrados.length} ${productosFiltrados.length === 1 ? 'producto' : 'productos'}`;
-                
-                // Ocultar botón volver si estamos en búsqueda
                 backButtonContainer.classList.add('hidden');
-                
                 renderProductos(productosFiltrados);
                 return;
             }
             
-            // Si no hay búsqueda, mostrar según categoría o categorías
             busquedaActiva = false;
             searchResultsCount.classList.add('hidden');
             
@@ -552,7 +552,6 @@
             familiaActiva = familia;
             searchInput.value = '';
             actualizarVistaSegunEstado();
-            // Agregar estado al historial para que el botón atrás funcione
             window.history.pushState({ familia: familia }, '', window.location.href);
         }
 
@@ -560,7 +559,6 @@
             familiaActiva = null;
             searchInput.value = '';
             actualizarVistaSegunEstado();
-            // Reemplazar el estado del historial para evitar bucles
             window.history.replaceState({ pagina: 'categorias' }, '', window.location.href);
         }
 
@@ -568,75 +566,44 @@
             actualizarVistaSegunEstado();
         }
 
-        // --- 🔥 FUNCIÓN PARA BORRAR ABSOLUTAMENTE TODO Y RECARGAR ---
-        function borrarCacheYRecargar() {
+        // --- 🔥 FUNCIÓN REFRESH - RECARGA SIN CACHÉ 🔥 ---
+        function recargarSinCache() {
             // Mostrar mensaje
             refreshMessage.classList.remove('hidden');
             const msgDiv = refreshMessage.querySelector('div');
             if (msgDiv) {
-                msgDiv.innerHTML = '<span class="material-symbols-outlined text-sm spinner">sync</span><span>🔥 BORRANDO TODO... RECARGANDO DESDE CERO</span>';
+                msgDiv.innerHTML = '<span class="material-symbols-outlined text-sm spinner">sync</span><span>🔄 Recargando sin caché...</span>';
             }
             
             refreshCacheBtn.disabled = true;
             refreshCacheBtn.style.opacity = '0.5';
             
-            // 🔥 1. BORRAR localStorage
+            // Limpiar storages
             try {
                 localStorage.clear();
-                console.log('✅ localStorage limpiado');
-            } catch(e) {}
-            
-            // 🔥 2. BORRAR sessionStorage
-            try {
                 sessionStorage.clear();
-                console.log('✅ sessionStorage limpiado');
             } catch(e) {}
             
-            // 🔥 3. BORRAR TODAS LAS CACHES
+            // Limpiar caches del navegador
             if ('caches' in window) {
                 caches.keys().then(function(names) {
                     for (let name of names) {
                         caches.delete(name);
-                        console.log('✅ Caché eliminada:', name);
                     }
                 });
             }
             
-            // 🔥 4. BORRAR COOKIES
-            try {
-                document.cookie.split(";").forEach(function(c) { 
-                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
-                });
-                console.log('✅ Cookies limpiadas');
-            } catch(e) {}
-            
-            // 🔥 5. DESREGISTRAR SERVICE WORKERS
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                    for(let registration of registrations) {
-                        registration.unregister();
-                        console.log('✅ Service Worker desregistrado');
-                    }
-                });
-            }
-            
-            // 🔥 6. RECARGAR CON UN NUEVO PARÁMETRO ÚNICO
+            // 🔥 RECARGAR FORZADO CON TIMESTAMP
             setTimeout(() => {
                 const timestamp = Date.now();
-                const random = Math.random().toString(36).substring(7);
-                const url = window.location.origin + window.location.pathname + '?_=' + timestamp + '&v=' + random + '&cache=0';
-                
-                console.log('🔄 Recargando desde:', url);
-                
-                // 🔥 FORZAR RECARGA COMPLETA DESDE EL SERVIDOR
-                window.location.replace(url);
-            }, 800);
+                // Recargar la misma página con un parámetro único
+                window.location.href = window.location.pathname + '?nocache=' + timestamp;
+            }, 500);
         }
 
         // --- Cargar productos desde JSON ---
         async function cargarProductos() {
             try {
-                // 🔥 Siempre usar timestamp para evitar caché del JSON
                 const timestamp = Date.now();
                 const url = `json/productos.json?nocache=${timestamp}`;
                 
@@ -655,7 +622,6 @@
                     throw new Error('Formato JSON inválido: se esperaba un array');
                 }
                 
-                // Procesar productos
                 todosLosProductos = data
                     .filter(item => item.precio_mayorista > 0)
                     .map(item => ({
@@ -667,7 +633,6 @@
                         cantidad: 999
                     }));
                 
-                // Obtener categorías únicas
                 const familiasSet = new Set(todosLosProductos.map(p => p.familia).filter(f => f && f.trim()));
                 familiasUnicas = Array.from(familiasSet).sort();
                 
@@ -675,7 +640,6 @@
                 window.cantidadesProductos = {};
                 todosLosProductos.forEach(p => { window.cantidadesProductos[p.id] = 1; });
                 
-                // Resetear vista a categorías
                 familiaActiva = null;
                 searchInput.value = '';
                 actualizarVistaSegunEstado();
@@ -684,18 +648,12 @@
                 return true;
             } catch (error) {
                 console.error('Error cargando productos:', error);
-                productsGrid.innerHTML = `<p class="text-center col-span-3 text-error">❌ Error al cargar productos: ${error.message}<br><small>Verifica que el archivo json/productos.json existe y tiene el formato correcto.</small></p>`;
+                productsGrid.innerHTML = `<p class="text-center col-span-3 text-error">❌ Error al cargar productos: ${error.message}</p>`;
                 return false;
             }
         }
 
-        // --- Función para actualizar catálogo (llama al borrado total) ---
-        function actualizarCatalogo() {
-            // Llamar directamente a la función de borrado total
-            borrarCacheYRecargar();
-        }
-
-        // --- Evento de historial para el botón atrás ---
+        // --- Eventos ---
         window.addEventListener('popstate', function(event) {
             if (familiaActiva !== null) {
                 volverAFamilias();
@@ -706,13 +664,11 @@
             }
         });
 
-        // Inicializar con un estado base en el historial
         window.history.replaceState({ pagina: 'categorias' }, '', window.location.href);
 
-        // Event listeners
         searchInput.addEventListener('input', manejarBusqueda);
         backToFamiliesBtn.addEventListener('click', volverAFamilias);
-        refreshCacheBtn.addEventListener('click', actualizarCatalogo);
+        refreshCacheBtn.addEventListener('click', recargarSinCache);
         
         // Inicializar
         cargarProductos();
