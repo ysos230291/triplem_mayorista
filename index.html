@@ -13,6 +13,21 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- 🔥 FORZAR RECARGA SI LA URL NO TIENE PARÁMETRO -->
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            // Si no tiene parámetro de versión, agregarlo
+            if (!urlParams.has('v') && !urlParams.has('_') && !urlParams.has('nocache')) {
+                const timestamp = Date.now();
+                const newUrl = window.location.origin + window.location.pathname + '?_=' + timestamp + '&v=' + timestamp;
+                window.location.replace(newUrl);
+                return; // Detener ejecución
+            }
+        })();
+    </script>
+    
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -259,7 +274,7 @@
         <section class="mb-10">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
                 <div class="max-w-2xl">
-                    <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-4" id="mainTitle">Prueba</h1>
+                    <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-4" id="mainTitle">CATEGORIAS</h1>
                     <p class="text-on-surface-variant body-lg max-w-lg leading-relaxed" id="subtitle">Explora nuestras categorías</p>
                 </div>
                 <div class="w-full md:w-96 relative group">
@@ -553,83 +568,69 @@
             actualizarVistaSegunEstado();
         }
 
-        // --- 🔥 FUNCIÓN PARA BORRAR ABSOLUTAMENTE TODO ---
+        // --- 🔥 FUNCIÓN PARA BORRAR ABSOLUTAMENTE TODO Y RECARGAR ---
         function borrarCacheYRecargar() {
             // Mostrar mensaje
             refreshMessage.classList.remove('hidden');
             const msgDiv = refreshMessage.querySelector('div');
             if (msgDiv) {
-                msgDiv.innerHTML = '<span class="material-symbols-outlined text-sm spinner">sync</span><span>🧹 LIMPIANDO TODO... CARGANDO DESDE CERO</span>';
+                msgDiv.innerHTML = '<span class="material-symbols-outlined text-sm spinner">sync</span><span>🔥 BORRANDO TODO... RECARGANDO DESDE CERO</span>';
             }
             
             refreshCacheBtn.disabled = true;
             refreshCacheBtn.style.opacity = '0.5';
             
+            // 🔥 1. BORRAR localStorage
             try {
-                // 1. localStorage - BORRAR TODO
                 localStorage.clear();
                 console.log('✅ localStorage limpiado');
-                
-                // 2. sessionStorage - BORRAR TODO
+            } catch(e) {}
+            
+            // 🔥 2. BORRAR sessionStorage
+            try {
                 sessionStorage.clear();
                 console.log('✅ sessionStorage limpiado');
-                
-                // 3. Cache API - BORRAR TODAS
-                if ('caches' in window) {
-                    caches.keys().then(function(names) {
-                        for (let name of names) {
-                            caches.delete(name);
-                            console.log('✅ Caché eliminada:', name);
-                        }
-                    });
-                }
-                
-                // 4. Cookies - BORRAR TODAS
+            } catch(e) {}
+            
+            // 🔥 3. BORRAR TODAS LAS CACHES
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    for (let name of names) {
+                        caches.delete(name);
+                        console.log('✅ Caché eliminada:', name);
+                    }
+                });
+            }
+            
+            // 🔥 4. BORRAR COOKIES
+            try {
                 document.cookie.split(";").forEach(function(c) { 
                     document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
                 });
                 console.log('✅ Cookies limpiadas');
-                
-                // 5. Service Workers - DESREGISTRAR TODOS
-                if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                        for(let registration of registrations) {
-                            registration.unregister();
-                            console.log('✅ Service Worker desregistrado');
-                        }
-                    });
-                }
-                
-                // 6. IndexedDB - BORRAR TODAS (si existe)
-                if ('indexedDB' in window) {
-                    indexedDB.databases().then(dbs => {
-                        dbs.forEach(db => {
-                            indexedDB.deleteDatabase(db.name);
-                            console.log('✅ IndexedDB eliminada:', db.name);
-                        });
-                    }).catch(() => {});
-                }
-                
-                // 7. FORZAR RECARGA COMPLETA
-                setTimeout(() => {
-                    const timestamp = Date.now();
-                    const random = Math.random().toString(36).substring(7);
-                    const url = window.location.origin + window.location.pathname;
-                    const newUrl = url + '?v=' + timestamp + '&r=' + random + '&cache=0';
-                    
-                    console.log('🔄 Recargando desde:', newUrl);
-                    
-                    // Usar location.href para recarga total
-                    window.location.href = newUrl;
-                }, 1000);
-                
-            } catch (error) {
-                console.error('❌ Error limpiando:', error);
-                // Si hay error, igual recargar forzado
-                setTimeout(() => {
-                    window.location.reload(true);
-                }, 500);
+            } catch(e) {}
+            
+            // 🔥 5. DESREGISTRAR SERVICE WORKERS
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                        registration.unregister();
+                        console.log('✅ Service Worker desregistrado');
+                    }
+                });
             }
+            
+            // 🔥 6. RECARGAR CON UN NUEVO PARÁMETRO ÚNICO
+            setTimeout(() => {
+                const timestamp = Date.now();
+                const random = Math.random().toString(36).substring(7);
+                const url = window.location.origin + window.location.pathname + '?_=' + timestamp + '&v=' + random + '&cache=0';
+                
+                console.log('🔄 Recargando desde:', url);
+                
+                // 🔥 FORZAR RECARGA COMPLETA DESDE EL SERVIDOR
+                window.location.replace(url);
+            }, 800);
         }
 
         // --- Cargar productos desde JSON ---
