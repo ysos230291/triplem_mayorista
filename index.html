@@ -17,13 +17,9 @@
     
     <!-- 🔥 CARGAR TODO CON TIMESTAMP PARA EVITAR CACHÉ 🔥 -->
     <script>
-        // Forzar que todos los recursos se carguen con timestamp
         (function() {
             const ts = Date.now();
-            
-            // Reescribir links de CSS si los hubiera
             document.addEventListener('DOMContentLoaded', function() {
-                // Agregar timestamp a todas las imágenes
                 document.querySelectorAll('img[src]').forEach(img => {
                     if (!img.src.includes('data:')) {
                         const separator = img.src.includes('?') ? '&' : '?';
@@ -396,25 +392,33 @@
         }
 
         window.agregarAlCarrito = function(id) {
+            // Normalizar id a string para evitar problemas de tipo
+            const idStr = String(id);
+            
             let cantidad = 1;
-            if (window.cantidadesProductos && window.cantidadesProductos[id]) {
+            if (window.cantidadesProductos && window.cantidadesProductos[idStr]) {
+                cantidad = window.cantidadesProductos[idStr];
+            } else if (window.cantidadesProductos && window.cantidadesProductos[id]) {
                 cantidad = window.cantidadesProductos[id];
             } else {
-                const span = document.getElementById(`cantidad-${id}`);
+                const span = document.getElementById(`cantidad-${idStr}`);
                 if (span) cantidad = parseInt(span.textContent);
             }
             
-            const producto = todosLosProductos.find(p => p.id === id);
-            if (!producto) return;
+            const producto = todosLosProductos.find(p => String(p.id) === idStr);
+            if (!producto) {
+                console.warn('Producto no encontrado con id:', id);
+                return;
+            }
             
             const carrito = obtenerCarrito();
-            const existingItem = carrito.items.find(item => item.id === id);
+            const existingItem = carrito.items.find(item => String(item.id) === idStr);
             
             if (existingItem) {
                 existingItem.cantidad += cantidad;
             } else {
                 carrito.items.push({
-                    id: id,
+                    id: producto.id,
                     nombre: producto.nombre,
                     precio: producto.precio,
                     imagen: producto.imagen,
@@ -480,7 +484,8 @@
             
             productos.forEach(p => {
                 if (!window.cantidadesProductos) window.cantidadesProductos = {};
-                if (!window.cantidadesProductos[p.id]) window.cantidadesProductos[p.id] = 1;
+                const key = String(p.id);
+                if (!window.cantidadesProductos[key]) window.cantidadesProductos[key] = 1;
             });
             
             searchResultsCount.textContent = `${productos.length} ${productos.length === 1 ? 'resultado' : 'resultados'}`;
@@ -493,16 +498,16 @@
                         <img alt="${p.nombre}" class="product-image w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="${p.imagen}?t=${timestamp}" onerror="this.src='https://placehold.co/600x800?text=Triple+M'"/>
                     </div>
                     <div class="quantity-selector">
-                        <button class="quantity-btn" onclick="cambiarCantidad(${p.id}, -1)">−</button>
-                        <span class="quantity-value" id="cantidad-${p.id}">${window.cantidadesProductos[p.id]}</span>
-                        <button class="quantity-btn" onclick="cambiarCantidad(${p.id}, 1)">+</button>
+                        <button class="quantity-btn" onclick="cambiarCantidad('${p.id}', -1)">−</button>
+                        <span class="quantity-value" id="cantidad-${p.id}">${window.cantidadesProductos[String(p.id)]}</span>
+                        <button class="quantity-btn" onclick="cambiarCantidad('${p.id}', 1)">+</button>
                     </div>
                     <div class="flex flex-col gap-2 mb-4">
                         <h3 class="font-headline text-xl font-bold tracking-tight text-on-surface">${p.nombre}</h3>
                         <p class="text-primary font-semibold text-lg">${p.precio}</p>
                         <p class="text-primary/70 font-semibold text-sm uppercase tracking-wide">${p.familia}</p>
                     </div>
-                    <button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all" onclick="agregarAlCarrito(${p.id})">AGREGAR AL CARRITO</button>
+                    <button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all" onclick="agregarAlCarrito('${p.id}')">AGREGAR AL CARRITO</button>
                 </article>
             `).join('');
             
@@ -568,7 +573,6 @@
 
         // --- 🔥 FUNCIÓN REFRESH - RECARGA SIN CACHÉ 🔥 ---
         function recargarSinCache() {
-            // Mostrar mensaje
             refreshMessage.classList.remove('hidden');
             const msgDiv = refreshMessage.querySelector('div');
             if (msgDiv) {
@@ -578,13 +582,11 @@
             refreshCacheBtn.disabled = true;
             refreshCacheBtn.style.opacity = '0.5';
             
-            // Limpiar storages
             try {
                 localStorage.clear();
                 sessionStorage.clear();
             } catch(e) {}
             
-            // Limpiar caches del navegador
             if ('caches' in window) {
                 caches.keys().then(function(names) {
                     for (let name of names) {
@@ -593,10 +595,8 @@
                 });
             }
             
-            // 🔥 RECARGAR FORZADO CON TIMESTAMP
             setTimeout(() => {
                 const timestamp = Date.now();
-                // Recargar la misma página con un parámetro único
                 window.location.href = window.location.pathname + '?nocache=' + timestamp;
             }, 500);
         }
@@ -638,7 +638,7 @@
                 
                 window.todosLosProductos = todosLosProductos;
                 window.cantidadesProductos = {};
-                todosLosProductos.forEach(p => { window.cantidadesProductos[p.id] = 1; });
+                todosLosProductos.forEach(p => { window.cantidadesProductos[String(p.id)] = 1; });
                 
                 familiaActiva = null;
                 searchInput.value = '';
@@ -670,7 +670,6 @@
         backToFamiliesBtn.addEventListener('click', volverAFamilias);
         refreshCacheBtn.addEventListener('click', recargarSinCache);
         
-        // Inicializar
         cargarProductos();
     </script>
 </body>
