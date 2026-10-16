@@ -2,14 +2,14 @@
     {
         "codigo": "01",
         "nombre": "CHAMP. COCO NT(1L)",
-        "precio_mayorista": 8.0,
+        "precio_mayorista": 0.0,
         "precio_online": 6.0,
         "categoria": "CUIDADO DEL CABELLO"
     },
     {
         "codigo": "02",
         "nombre": "ACOND. COCO NT(1L)",
-        "precio_mayorista": 10.0,
+        "precio_mayorista": 0.0,
         "precio_online": 6.0,
         "categoria": "CUIDADO DEL CABELLO"
     },
@@ -29,14 +29,14 @@
     },
     {
         "codigo": "05",
-        "nombre": "CHAMP. ARG√ÅN NT(500ml)",
+        "nombre": "CHAMP. ARG¡N NT(500ml)",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CUIDADO DEL CABELLO"
     },
     {
         "codigo": "06",
-        "nombre": "ACOND. ARG√ÅN NT(500ml)",
+        "nombre": "ACOND. ARG¡N NT(500ml)",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CUIDADO DEL CABELLO"
@@ -51,7 +51,7 @@
     {
         "codigo": "08",
         "nombre": "MACARRONES",
-        "precio_mayorista": 15.0,
+        "precio_mayorista": 0.0,
         "precio_online": 0.9,
         "categoria": "ALIMENTOS"
     },
@@ -85,7 +85,7 @@
     },
     {
         "codigo": "13",
-        "nombre": "AT√öN",
+        "nombre": "AT⁄N",
         "precio_mayorista": 0.0,
         "precio_online": 2.3,
         "categoria": "ALIMENTOS"
@@ -116,60 +116,60 @@
         "nombre": "COLON. BODY MIST NBA",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "18",
         "nombre": "COLON. BODY MIST JAFRA",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "19",
         "nombre": "COLON. BODY MIST CAMPER",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "20",
         "nombre": "COLON. BODY MIST CHLOE",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "21",
-        "nombre": "COLON. BONABEL ORQU√çDEA",
+        "nombre": "COLON. BONABEL ORQUÕDEA",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "22",
         "nombre": "COLON. BONABEL AGUA ROSAS",
         "precio_mayorista": 0.0,
         "precio_online": 4.5,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "23",
         "nombre": "COLON. BONABEL AQUA",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "24",
         "nombre": "COLON. BONABEL VIOLETA",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "25",
-        "nombre": "CHAMP√ö DAILY",
+        "nombre": "CHAMP⁄ DAILY",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CUIDADO DEL CABELLO"
@@ -186,70 +186,70 @@
         "nombre": "PERF. LAYALI",
         "precio_mayorista": 0.0,
         "precio_online": 25.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "28",
         "nombre": "PERF. NOUR LE",
         "precio_mayorista": 0.0,
         "precio_online": 25.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "29",
         "nombre": "PERF. PARIS LOVE",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "30",
         "nombre": "PERF. GOLDEN ROSE",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "31",
         "nombre": "PERF. CHIC GIRL",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "32",
         "nombre": "PERF. BLACK FLOWER",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "33",
         "nombre": "PERF. PRIVATE",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "34",
         "nombre": "PERF. STRONG",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "35",
         "nombre": "PERF. LEGEND",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "36",
         "nombre": "PERF. BLUE ESSENCE",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "37",
@@ -270,7 +270,7 @@
         "nombre": "PERF. ALICIA EDT",
         "precio_mayorista": 0.0,
         "precio_online": 14.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "40",
@@ -284,18 +284,18 @@
         "nombre": "PERF. MARIPOSA ELIXIR",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "42",
         "nombre": "PERF. ELEMENT (H)",
         "precio_mayorista": 0.0,
         "precio_online": 7.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "43",
-        "nombre": "CHAMP√ö HONEY",
+        "nombre": "CHAMP⁄ HONEY",
         "precio_mayorista": 0.0,
         "precio_online": 4.5,
         "categoria": "CUIDADO DEL CABELLO"
@@ -305,60 +305,60 @@
         "nombre": "PERF. D\" HABANA (H)",
         "precio_mayorista": 0.0,
         "precio_online": 22.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "45",
         "nombre": "PERF. D\" HABANA (M)",
         "precio_mayorista": 0.0,
         "precio_online": 28.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "46",
         "nombre": "PERF. COMPLICE (H)",
         "precio_mayorista": 0.0,
         "precio_online": 10.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "47",
-        "nombre": "PERF. AMORE M√çO",
+        "nombre": "PERF. AMORE MÕO",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "48",
         "nombre": "PERF. CAMERATA",
         "precio_mayorista": 0.0,
         "precio_online": 13.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "49",
         "nombre": "PERF. ROMEO JULIETA (H)",
         "precio_mayorista": 0.0,
         "precio_online": 20.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "50",
         "nombre": "PERF. ROMEO JULIETA (M)",
         "precio_mayorista": 0.0,
         "precio_online": 20.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "51",
         "nombre": "PERF. ROMEO JULIT CONF.(H)",
         "precio_mayorista": 0.0,
         "precio_online": 26.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "52",
-        "nombre": "SERUM ORO L√çQUIDO",
+        "nombre": "SERUM ORO LÕQUIDO",
         "precio_mayorista": 0.0,
         "precio_online": 5.6,
         "categoria": "CUIDADO DEL CABELLO"
@@ -368,56 +368,56 @@
         "nombre": "PERF. ALAS DE MARIPOSA",
         "precio_mayorista": 0.0,
         "precio_online": 8.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "54",
-        "nombre": "PERF. TENTACI√ìN (M)",
+        "nombre": "PERF. TENTACI”N (M)",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "55",
-        "nombre": "PERF. TENTACI√ìN (H)",
+        "nombre": "PERF. TENTACI”N (H)",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "56",
         "nombre": "PERF. ALICIA INTENSE",
         "precio_mayorista": 0.0,
         "precio_online": 30.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "57",
         "nombre": "PERF. PERLA DEL SUR",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "58",
-        "nombre": "PERF. MALEC√ìN HABANERO",
+        "nombre": "PERF. MALEC”N HABANERO",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "59",
         "nombre": "PERF. NAO AQUA",
         "precio_mayorista": 0.0,
         "precio_online": 13.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "60",
         "nombre": "PERF. EVA",
         "precio_mayorista": 0.0,
         "precio_online": 7.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "61",
@@ -456,14 +456,14 @@
     },
     {
         "codigo": "66",
-        "nombre": "CREMA PIEL KARIT√â",
+        "nombre": "CREMA PIEL KARIT…",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CREMAS DE PIEL"
     },
     {
         "codigo": "67",
-        "nombre": "CREMA PIEL ARG√ÅN",
+        "nombre": "CREMA PIEL ARG¡N",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CREMAS DE PIEL"
@@ -477,21 +477,21 @@
     },
     {
         "codigo": "69",
-        "nombre": "JAB√ìN LAVAR (amarillo)",
+        "nombre": "JAB”N LAVAR (amarillo)",
         "precio_mayorista": 0.0,
         "precio_online": 0.7,
         "categoria": "JABONES"
     },
     {
         "codigo": "70",
-        "nombre": "JAB√ìN LAVAR (Blanco)",
+        "nombre": "JAB”N LAVAR (Blanco)",
         "precio_mayorista": 0.0,
         "precio_online": 0.8,
         "categoria": "JABONES"
     },
     {
         "codigo": "71",
-        "nombre": "PASTA DENTAL SOR√çE",
+        "nombre": "PASTA DENTAL SORÕE",
         "precio_mayorista": 0.0,
         "precio_online": 1.6,
         "categoria": "ASEO PERSONAL"
@@ -540,7 +540,7 @@
     },
     {
         "codigo": "78",
-        "nombre": "MAYONESA CL√ÅSICA",
+        "nombre": "MAYONESA CL¡SICA",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "ALIMENTOS"
@@ -582,7 +582,7 @@
     },
     {
         "codigo": "84",
-        "nombre": "MA√çZ DULCE",
+        "nombre": "MAÕZ DULCE",
         "precio_mayorista": 0.0,
         "precio_online": 1.7,
         "categoria": "ALIMENTOS"
@@ -610,7 +610,7 @@
     },
     {
         "codigo": "88",
-        "nombre": "CAF√â EXPRESSO",
+        "nombre": "CAF… EXPRESSO",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "ALIMENTOS"
@@ -631,7 +631,7 @@
     },
     {
         "codigo": "91",
-        "nombre": "REFRESCO LIM√ìN",
+        "nombre": "REFRESCO LIM”N",
         "precio_mayorista": 0.0,
         "precio_online": 2.0,
         "categoria": "ALIMENTOS"
@@ -645,7 +645,7 @@
     },
     {
         "codigo": "93",
-        "nombre": "AZ√öCAR BLANCA",
+        "nombre": "AZ⁄CAR BLANCA",
         "precio_mayorista": 0.0,
         "precio_online": 2.0,
         "categoria": "ALIMENTOS"
@@ -666,7 +666,7 @@
     },
     {
         "codigo": "96",
-        "nombre": "MEDIAS DE SE√ëOR",
+        "nombre": "MEDIAS DE SE—OR",
         "precio_mayorista": 0.0,
         "precio_online": 0.4,
         "categoria": "CONFECCIONES TEXTILES"
@@ -708,7 +708,7 @@
     },
     {
         "codigo": "102",
-        "nombre": "M√ÅQUINA AFEITAR",
+        "nombre": "M¡QUINA AFEITAR",
         "precio_mayorista": 0.0,
         "precio_online": 0.25,
         "categoria": "ASEO PERSONAL"
@@ -743,7 +743,7 @@
     },
     {
         "codigo": "107",
-        "nombre": "YOGURT PL√ÅTANO",
+        "nombre": "YOGURT PL¡TANO",
         "precio_mayorista": 0.0,
         "precio_online": 0.7,
         "categoria": "ALIMENTOS"
@@ -778,14 +778,14 @@
     },
     {
         "codigo": "112",
-        "nombre": "DETERG. L√çQ. LIM√ìN",
+        "nombre": "DETERG. LÕQ. LIM”N",
         "precio_mayorista": 0.0,
         "precio_online": 1.0,
         "categoria": "ASEO DEL HOGAR"
     },
     {
         "codigo": "113",
-        "nombre": "GEL BA√ëO DAILY",
+        "nombre": "GEL BA—O DAILY",
         "precio_mayorista": 0.0,
         "precio_online": 2.0,
         "categoria": "ASEO PERSONAL"
@@ -799,7 +799,7 @@
     },
     {
         "codigo": "115",
-        "nombre": "ACEITE (Gal√≥n)",
+        "nombre": "ACEITE (GalÛn)",
         "precio_mayorista": 0.0,
         "precio_online": 100.0,
         "categoria": "ALIMENTOS"
@@ -820,14 +820,14 @@
     },
     {
         "codigo": "118",
-        "nombre": "JUGO DE LIM√ìN",
+        "nombre": "JUGO DE LIM”N",
         "precio_mayorista": 0.0,
         "precio_online": 0.45,
         "categoria": "ALIMENTOS"
     },
     {
         "codigo": "119",
-        "nombre": "CHAMP√ö KIN (Pelo graso)",
+        "nombre": "CHAMP⁄ KIN (Pelo graso)",
         "precio_mayorista": 0.0,
         "precio_online": 4.4,
         "categoria": "CUIDADO DEL CABELLO"
@@ -841,7 +841,7 @@
     },
     {
         "codigo": "121",
-        "nombre": "CHAMP√ö ALOE PLUS",
+        "nombre": "CHAMP⁄ ALOE PLUS",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CUIDADO DEL CABELLO"
@@ -855,7 +855,7 @@
     },
     {
         "codigo": "123",
-        "nombre": "CHAMP√ö SEDA",
+        "nombre": "CHAMP⁄ SEDA",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "CUIDADO DEL CABELLO"
@@ -865,95 +865,95 @@
         "nombre": "PERF. ELEMENT (M)",
         "precio_mayorista": 0.0,
         "precio_online": 7.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "125",
         "nombre": "PERF. MARIPOSA ABSOLU",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "126",
         "nombre": "PERF. NAO",
         "precio_mayorista": 0.0,
         "precio_online": 10.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "127",
         "nombre": "PERF.  IMPACTO (H)",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "128",
         "nombre": "PERF.  IMPACTO (M)",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "129",
         "nombre": "PERF. VARADERO",
         "precio_mayorista": 0.0,
         "precio_online": 9.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "130",
         "nombre": "PERF. PUERTO DE SAGUA",
         "precio_mayorista": 0.0,
         "precio_online": 9.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "131",
-        "nombre": "DESOD. BAMB√ö",
+        "nombre": "DESOD. BAMB⁄",
         "precio_mayorista": 0.0,
         "precio_online": 1.5,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "132",
         "nombre": "PERF. BLUE MOON",
         "precio_mayorista": 0.0,
         "precio_online": 8.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "133",
         "nombre": "PERF. VEGUERO IN BLACK",
         "precio_mayorista": 0.0,
         "precio_online": 14.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "134",
         "nombre": "PERF. MARIPOSA TRAD.",
         "precio_mayorista": 0.0,
         "precio_online": 13.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "135",
-        "nombre": "CHAMP√ö ORO L√çQ.",
+        "nombre": "CHAMP⁄ ORO LÕQ.",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "CUIDADO DEL CABELLO"
     },
     {
         "codigo": "136",
-        "nombre": "MASCARRILLA ORO L√çQ.",
+        "nombre": "MASCARRILLA ORO LÕQ.",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "CUIDADO DEL CABELLO"
     },
     {
         "codigo": "137",
-        "nombre": "CREMA PEINAR ORO L√çQ.",
+        "nombre": "CREMA PEINAR ORO LÕQ.",
         "precio_mayorista": 0.0,
         "precio_online": 4.0,
         "categoria": "CUIDADO DEL CABELLO"
@@ -963,46 +963,46 @@
         "nombre": "PERF. REBELDE",
         "precio_mayorista": 0.0,
         "precio_online": 8.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "139",
         "nombre": "PERF. COMPLICE (M)",
         "precio_mayorista": 0.0,
         "precio_online": 8.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "140",
-        "nombre": "COLON. JAZM√çN RADIANTE",
+        "nombre": "COLON. JAZMÕN RADIANTE",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "141",
         "nombre": "COLON. AQUA INTENSE",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "142",
         "nombre": "COLON. ROSAS BLANCAS",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "143",
         "nombre": "PERF. VEGUERO",
         "precio_mayorista": 0.0,
         "precio_online": 12.0,
-        "categoria": "PERFUMER√çA"
+        "categoria": "PERFUMERÕA"
     },
     {
         "codigo": "144",
-        "nombre": "TOALLAS H√öMEDAS",
+        "nombre": "TOALLAS H⁄MEDAS",
         "precio_mayorista": 0.0,
         "precio_online": 1.7,
         "categoria": "ASEO PERSONAL"
@@ -1030,7 +1030,7 @@
     },
     {
         "codigo": "149",
-        "nombre": "JAB√ìN NACAR",
+        "nombre": "JAB”N NACAR",
         "precio_mayorista": 0.0,
         "precio_online": 0.84,
         "categoria": "JABONES"
@@ -1065,7 +1065,7 @@
     },
     {
         "codigo": "154",
-        "nombre": "JUEG. CHAP-ACOD ARG√ÅN (14onz)",
+        "nombre": "JUEG. CHAP-ACOD ARG¡N (14onz)",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "CUIDADO DEL CABELLO"
@@ -1086,21 +1086,21 @@
     },
     {
         "codigo": "160",
-        "nombre": "ESPUMA AFEITAR (Az√∫l)",
+        "nombre": "ESPUMA AFEITAR (Az˙l)",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "ASEO PERSONAL"
     },
     {
         "codigo": "161",
-        "nombre": "GEL BA√ëO AMALFI (1250ml)",
+        "nombre": "GEL BA—O AMALFI (1250ml)",
         "precio_mayorista": 0.0,
         "precio_online": 6.0,
         "categoria": "ASEO PERSONAL"
     },
     {
         "codigo": "162",
-        "nombre": "GEL BA√ëO AMALFI (750ml)",
+        "nombre": "GEL BA—O AMALFI (750ml)",
         "precio_mayorista": 0.0,
         "precio_online": 5.0,
         "categoria": "ASEO PERSONAL"
@@ -1156,14 +1156,14 @@
     },
     {
         "codigo": "170",
-        "nombre": "JAB√ìN CARB√ìN",
+        "nombre": "JAB”N CARB”N",
         "precio_mayorista": 0.0,
         "precio_online": 0.9,
         "categoria": "JABONES"
     },
     {
         "codigo": "171",
-        "nombre": "DESOD. REX. BAMB√ö",
+        "nombre": "DESOD. REX. BAMB⁄",
         "precio_mayorista": 0.0,
         "precio_online": 3.0,
         "categoria": "DESODORANTES"
@@ -1261,7 +1261,7 @@
     },
     {
         "codigo": "185",
-        "nombre": "JAB√ìN LOLEO (75g)",
+        "nombre": "JAB”N LOLEO (75g)",
         "precio_mayorista": 0.0,
         "precio_online": 0.8,
         "categoria": "JABONES"
